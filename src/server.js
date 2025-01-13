@@ -5,12 +5,12 @@ import {config} from 'dotenv'
 import authRoutes from './routes/auth.route.js'
 import messageRoutes from './routes/message.route.js'
 import databaseConnection from './lib/db.js'
-import http from 'http'
+import https from 'https'
 import {Server} from 'socket.io'
 config()
 const app = express()
 const PORT = process.env.PORT
-const server = http.createServer(app )
+const server = https.createServer(app )
 
 //middlewares
 app.use(express.json({limit : "10mb"}))
