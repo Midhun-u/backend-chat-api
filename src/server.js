@@ -15,7 +15,7 @@ const server = http.createServer(app )
 //middlewares
 app.use(express.json({limit : "10mb"}))
 app.use(express.urlencoded({extended : true}))
-app.use(cors({origin : "https://chatify-gray.vercel.app/" , credentials : true}))
+app.use(cors({origin : "*" , credentials : true}))
 app.use(cookieParser())
 
 //route middleware for authentication
@@ -26,7 +26,7 @@ app.use("/message" , messageRoutes)
 //socket io implementaion
 const io = new Server(server , {
     cors : {
-        origin : "https://chatify-gray.vercel.app/",
+        origin : "*",
         methods : ["GET" , "POST"]
     }
 })
