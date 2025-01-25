@@ -5,7 +5,7 @@ import {config} from 'dotenv'
 import authRoutes from './routes/auth.route.js'
 import messageRoutes from './routes/message.route.js'
 import databaseConnection from './lib/db.js'
-import https from 'https'
+import http from 'http'
 import {Server} from 'socket.io'
 config()
 const app = express()
